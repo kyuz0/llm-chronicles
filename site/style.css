@@ -1,0 +1,285 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.content-wrapper {
+    flex: 1;
+}
+
+.container-md {
+    padding-bottom: 100vh;
+}
+
+/* Logo Size */
+.hero img {
+    max-width: 370px;
+    /* Adjust this value as needed */
+    width: 100%;
+}
+
+/* Hero Background */
+.hero {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 30vh;
+    /* Adjust this value between 25vh to 30vh based on your preference */
+    background: url('imgs/hero2.svg');
+}
+
+.hero2 {
+    background-color: #00a8db;
+    font-size: 1.1em;
+}
+
+.hero2 p {
+    margin: 5em;
+    max-width: 720px;
+}
+
+.hero p {
+    color: #00a8db;
+    font-size: 30px;
+    font-weight: 300;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    /* Ensure it's above other content */
+}
+
+.footer a {
+    color: #ffffff;
+    /* White color for visibility against dark background */
+    text-decoration: none;
+    /* Remove underline */
+    transition: color 0.3s;
+    /* Smooth transition for hover effect */
+
+}
+
+.footer a:hover,
+.footer a:focus {
+    color: #FFD700;
+    /* Gold color for hover effect */
+    text-decoration: underline;
+    /* Underline on hover */
+}
+
+.thumbnail-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.thumbnail-wrapper img {
+    transition: transform 0.3s ease-in-out;
+    z-index: 1;
+    /* Ensure the image is below the play icon */
+}
+
+.thumbnail-wrapper:hover img {
+    transform: scale(1.1);
+}
+
+.thumbnail-wrapper::before {
+    content: '\f04b';
+    /* Font Awesome play icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 2;
+    pointer-events: none;
+    /* Add this line */
+
+    /* Ensure the play icon is above the image */
+}
+
+.thumbnail-wrapper:hover::before {
+    opacity: 1;
+}
+
+.thumbnail-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black overlay with 50% opacity */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+    /* Ensure the overlay is below the play icon but above the image */
+    pointer-events: none;
+    /* Ensure the overlay doesn't block clicks */
+}
+
+.thumbnail-wrapper:hover::after {
+    opacity: 1;
+}
+
+.video-description {
+    max-height: 3.2em;
+    /* Assuming 1.5em per line */
+    overflow: hidden;
+    position: relative;
+}
+
+.show-more {
+    display: inline-block;
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.reference-links a {
+    margin-right: 15px;
+    color: #007bff;
+    /* Bootstrap primary color */
+    text-decoration: none;
+}
+
+.reference-links a:hover {
+    text-decoration: underline;
+}
+
+.reference-links i {
+    margin-right: 5px;
+}
+
+.reference-links a {
+    float: right;
+}
+
+.video-section {
+    background-color: #f9f9f9;
+    /* Light gray background */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* General Sidebar Styling */
+
+.scroll-nav {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #333;
+    position: fixed;
+    z-index: 499;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    background: #eee;
+    border-right: 1px solid #ccc;
+    transition: 0.3s;
+    transform: translateX(-230px);
+    font-size: 0.95em;
+}
+
+.scroll-nav-title {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+/* Toggle Button Styling */
+.scroll-nav-toggle {
+    position: absolute;
+    top: 10px;
+    right: -16px;
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    transition: 0.3s;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    color: #757575;
+}
+
+/* Lesson Group & Lesson Styling */
+.scroll-nav-list,
+.scroll-nav-sub-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.scroll-nav-list>li {
+    border-bottom: 1px solid #ccc;
+}
+
+.scroll-nav-button {
+    background: none;
+    border: none;
+    padding: 10px 10px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    color: #5581e6;
+    transition: background-color 0.3s;
+}
+
+.scroll-nav-button:hover {
+    background-color: rgba(85, 129, 230, 0.1);
+}
+
+.scroll-nav-button:focus {
+    outline: none;
+}
+
+.scroll-nav-sub-list {
+    padding-left: 20px;
+}
+
+.scroll-nav-sub-list a {
+    display: block;
+    padding: 6px;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.3s;
+}
+
+.scroll-nav-sub-list a:hover {
+    background-color: rgba(85, 129, 230, 0.1);
+}
+
+/* Active State Styling */
+.scroll-nav-list>li.active>.scroll-nav-button,
+.scroll-nav-sub-list a.active {
+    font-weight: bold;
+    background-color: rgba(85, 129, 230, 0.2);
+}
+
+.scroll-nav.active {
+    transform: translateX(0px);
+    /* This shows the sidebar when active class is added */
+}
+
+.scroll-nav-toggle:focus {
+    outline: none;
+    box-shadow: none;
+}

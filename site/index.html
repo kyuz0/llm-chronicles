@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Chronicles</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="content-wrapper">
+        <!-- Hero Banner -->
+        <section class="hero text-white text-center d-flex justify-content-center align-items-center">
+            <div>
+                <img src="imgs/logo.png" alt="LLM Chronicles Logo">
+            </div>
+        </section>
+        <section class="hero2 text-white d-flex justify-content-center align-items-center">
+            <div>
+                <p>Welcome to the "LLM Chronicles", a fast-paced series of whiteboard animations dedicated to Deep
+                    Learning and Large Language Models.
+                    Throughout this series, I focus on the big ideas and aim to provide an intuitive but detailed grasp
+                    of key
+                    concepts, from the basics of Neural Networks to how Recurrent
+                    Neural Networks and Transformers function in modern Large Language Models such as that that power
+                    ChatGPT. My goal is to help you understand how things work without
+                    the fluff.</p>
+            </div>
+        </section>
+
+        <div class="scroll-nav active">
+            <button class="base scroll-nav-toggle">
+                <i class="fas fa-bars" id="expand-icon" style="display: none;"></i>
+                <i class="fas fa-arrow-left" id="collapse-icon"></i>
+            </button>
+            <div class="scroll-nav-inner">
+                <div class="scroll-nav-title">LLM Chronicles</div>
+                <div class="scroll-nav-items">
+                    <ul class="scroll-nav-list">
+                        <!-- Group: Introduction -->
+                        <li class="complete">
+                            <button class="base scroll-nav-button"><span>Part 1: Introduction</span></button>
+                            <ul class="scroll-nav-sub-list">
+                                <li class="complete">
+                                    <a href="#1" class="base scroll-nav-button" data-target="1"><span>#1:
+                                            Introduction</span></a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Group: Neural Networks Basics -->
+                        <li class="complete">
+                            <button class="base scroll-nav-button"><span>Part 2: Neural Networks Basics</span></button>
+                            <ul class="scroll-nav-sub-list">
+                                <li class="complete">
+                                    <a href="#2.1" class="base scroll-nav-button"><span>#2.1: Neural
+                                            Networks and Multi-Layer Perceptrons</span></a>
+                                </li>
+                                <li class="complete">
+                                    <a href="#2.2" class="base scroll-nav-button"><span>#2.2: Multi-Layer Perceptrons
+                                            and MNIST Digit Classification using PyTorch (Lab)</span></a>
+                                </li>
+                                <!-- ... other lessons in this group ... -->
+                            </ul>
+                        </li>
+
+                        <!-- Group: Gradient Descent -->
+                        <li>
+                            <button class="base scroll-nav-button"><span>Paret 3: Training Neural
+                                    Networks</span></button>
+                            <ul class="scroll-nav-sub-list">
+                                <li class="complete">
+                                    <a href="#3.1" class="base scroll-nav-button"><span>#3.1: Loss
+                                            Function and Gradient Descent</span></a>
+                                </li>
+                                <li>
+                                    <a href="#3.2" class="base scroll-nav-button"><span>#3.2:
+                                            Gradient Descent in PyTorch with Autograd (Lab)</span></a>
+                                </li>
+                                <li>
+                                    <a href="#3.3" class="base scroll-nav-button"><span>
+                                            #3.3: Training with Gradient Descent and Optimizations</span></a>
+                                </li>
+                                <li>
+                                    <a href="#3.4" class="base scroll-nav-button"><span>
+                                            #3.4: Training the MNIST Perceptron with PyTorch (Lab)</span></a>
+                                </li>
+                                <li>
+                                    <a href="#3.5" class="base scroll-nav-button"><span>
+                                            #3.5: Evaluation, Overfitting and Underfitting</span></a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <button class="base scroll-nav-button"><span>Part 4: Language models with
+                                    RNNs</span></button>
+                            <ul class="scroll-nav-sub-list">
+                                <li class="complete">
+                                    <a href="#4.1" class="base scroll-nav-button"><span>#4.1: Recurrent Neural
+                                            Networks</span></a>
+                                </li>
+                                <li>
+                                    <a href="#4.2" class="base scroll-nav-button"><span>#4.2: Character-Level RNN with
+                                            PyTorch (Lab)</span></a>
+                                </li>
+                                <li>
+                                    <a href="#4.3" class="base scroll-nav-button"><span>#4.3: Encoder/Decoder
+                                            Architecture and Attention</span></a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- ... other groups ... -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- YouTube Videos -->
+        <section class="container-md mt-5">
+            <!-- #1: Introduction -->
+            <h2>Part 1: Introduction</h2>
+
+            <div class="video-section">
+                <div id="1" class="row mb-4 video">
+                    <div class="col-md-4 thumbnail-wrapper">
+                        <a target="_blank" href="https://youtu.be/rRdUbdhHjy0">
+                            <img src="imgs/thumb1.png" alt="Video Thumbnail" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-8 d-flex flex-column">
+                        <h3>#1: Introduction and Roadmap</h3>
+                        <div class="video-description">
+                            <p>Welcome to the "LLM Chronicles". In this introductory video, I'll lay out the roadmap for
+                                navigating the world of Large Language Models. Throughout this series, I'll focus on the
+                                big
+                                ideas and aim to provide an intuitive grasp of key concepts, from the basics of neural
+                                networks to how Recurrent Neural Networks and Transformers function. My goal is to help
+                                you
+                                understand how things work without the fluff.</p>
+                            <p>Join me as I set the course for a clear and intuitive exploration of LLMs.</p>
+                        </div>
+                        <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
+                        <div class="reference-links mt-auto">
+                            <a
+                                href="https://drive.google.com/file/d/1yVC9UtIlxgm8naf-JZIZz-mjiyO4WiWU/view?usp=sharing"><i
+                                    class="fas fa-download"></i> Download Roadmap</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h2>Part 2: Neural Networks Basics</h2>
+                <!-- #2.1: Neural Networks and Multi-Layer Perceptrons -->
+                <div id="2.1" class="row mb-4 video">
+                    <div class="col-md-4 thumbnail-wrapper">
+                        <a target="_blank" href="https://youtu.be/esyf8hK65kc">
+                            <img src="imgs/thumb2_1.png" alt="Video Thumbnail" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-8 d-flex flex-column">
+                        <h3>#2.1: Neural Networks and Multi-Layer Perceptrons</h3>
+                        <div class="video-description">
+                            <p>In this episode of the LLM Chronicles, we'll cover the basics of artificial neurons, see
+                                how
+                                they form multi-layer perceptrons, and learn how to model inputs and outputs for
+                                effective
+                                network processing. We'll also touch on vectorialization and its role in optimizing
+                                neural
+                                network implementations on GPUs.</p>
+                        </div>
+                        <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
+                        <div class="reference-links mt-auto">
+                            <a
+                                href="https://drive.google.com/file/d/1scFGe6XSl5hCskLE0bdr9q1uFOITus4B/view?usp=sharing"><i
+                                    class="fas fa-download"></i> Mindmap</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- #2.2: Multi-Layer Perceptrons and MNIST Digit Classification using PyTorch (Lab) -->
+                <div id="2.2" class="row mb-4 video">
+                    <div class="col-md-4 thumbnail-wrapper">
+                        <a target="_blank" href="https://youtu.be/jpIAx_GZ_4U">
+                            <img src="imgs/thumb2_2.png" alt="Video Thumbnail" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-8 d-flex flex-column">
+                        <h3>#2.2: Multi-Layer Perceptrons and MNIST Digit Classification using PyTorch
+                            (Lab)
+                        </h3>
+                        <div class="video-description">
+                            <p>Welcome to the first hands-on lab session of the LLM Chronicles. Here we first implement
+                                Multi-Layer Perceptrons (MLPs) from scratch using matrix operations with NumPy.
+                                Following
+                                that, we set up an MLP using PyTorch for digit classification on the MNIST dataset.</p>
+                        </div>
+                        <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
+                        <div class="reference-links mt-auto">
+                            <a
+                                href="https://colab.research.google.com/drive/1HzVYVikFmp2S_ks0nbkDcuwoTZBdyUbr?usp=sharing"><i
+                                    class="fas fa-code"></i> Lab Notebook</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Section 3 -->
+            <div class="video-section">
+                <h2>Part 3: Training Neural Networks</h2>
+                <!-- #3.1: Loss Function and Gradient Descent -->
+                <div id="3.1" class="row mb-4 video">
+                    <div class="col-md-4 thumbnail-wrapper">
+                        <a target="_blank" href="https://youtu.be/bBCbe-HHE-k">
+                            <img src="imgs/thumb3_1.png" alt="Video Thumbnail" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-8 d-flex flex-column">
+                        <h3>#3.1: Loss Function and Gradient Descent</h3>
+                        <div class="video-description">
+                            <p>In this episode of the LLM Chronicles, we'll cover how to prepare datasets for effective
+                                training of neural networks. We'll then look at how the problem of training a network
+                                can be
+                                defined in terms of minimizing the loss function and we'll close by looking at how we
+                                can
+                                achieve this using gradient descent.</p>
+                        </div>
+                        <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
+                        <div class="reference-links mt-auto">
+                            <a
+                                href="https://drive.google.com/file/d/1QMJKRU3bpx_awUqtn_ctnaunZ_mDAGM9/view?usp=sharing"><i
+                                    class="fas fa-download"></i> Preparing Datasets Mindmap</a>
+                            <a
+                                href="https://drive.google.com/file/d/1wNfy-rZdgKHfMS08Mx2k-BuAxziRV5Qa/view?usp=sharing"><i
+                                    class="fas fa-download"></i> Loss and Gradient Descent Mindmap</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- #3.2: Gradient Descent in PyTorch with Autograd (Lab) -->
+                <div id="3.2" class="row mb-4 video">
+                    <div class="col-md-4 thumbnail-wrapper">
+                        <a target="_blank" href="https://youtu.be/ijhk5n2hJOY">
+                            <img src="imgs/thumb3_2.png" alt="Video Thumbnail" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-8 d-flex flex-column">
+                        <h3>#3.2: Gradient Descent in PyTorch with Autograd (Lab)</h3>
+                        <div class="video-description">
+                            <p>In this hands-on lab we look at how PyTorch uses the Autograd library to implement the
+                                concepts of derivatives and gradient descent that we saw in the previous episode.</p>
+                        </div>
+                        <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
+                        <div class="reference-links mt-auto">
+                            <a
+                                href="https://colab.research.google.com/drive/1GVTet0rr_3Q5zGmfeQE7dA0bPsuGkVWd?usp=sharing"><i
+                                    class="fas fa-code"></i> Lab Notebook</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="3.3" class="row mb-4 video">
+                    <div class="col-md-4 thumbnail-wrapper">
+                        <a target="_blank" href="#">
+                            <img src="imgs/under_construction.png" alt="Video Thumbnail" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-8 d-flex flex-column">
+                        <h3>#3.3: Training with Gradient Descent and Optimizations</h3>
+                        <div class="video-description">
+                            <p>Coming soon...</p>
+                        </div>
+                        <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
+                        <div class="reference-links mt-auto">
+                            <a href="#"><i class="fas fa-download"></i> Training with Gradient Descent and
+                                Optimizations</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="3.4" class="row mb-4 video">
+                    <div class="col-md-4 thumbnail-wrapper">
+                        <a target="_blank" href="#">
+                            <img src="imgs/under_construction.png" alt="Video Thumbnail" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-8 d-flex flex-column">
+                        <h3>#3.4: Training the MNIST Perceptron with PyTorch (Lab)</h3>
+                        <div class="video-description">
+                            <p>Coming soon...</p>
+                        </div>
+                        <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
+                        <div class="reference-links mt-auto">
+                            <a href="#"><i class="fas fa-code"></i> Lab Notebook</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="3.5" class="row mb-4 video">
+                    <div class="col-md-4 thumbnail-wrapper">
+                        <a target="_blank" href="#">
+                            <img src="imgs/under_construction.png" alt="Video Thumbnail" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-8 d-flex flex-column">
+                        <h3>#3.5: Evaluation, Overfitting and Underfitting</h3>
+                        <div class="video-description">
+                            <p>Coming soon...</p>
+                        </div>
+                        <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
+                        <div class="reference-links mt-auto">
+                            <a href="#"><i class="fas fa-download"></i> Evaluation, Overfitting and Underfitting</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h2>Part 4: Language Models with Recurrent Neural Networks</h2>
+
+                <div id="4.1" class="row mb-4 video">
+                    <div class="col-md-4 thumbnail-wrapper">
+                        <a target="_blank" href="#">
+                            <img src="imgs/under_construction.png" alt="Video Thumbnail" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-8 d-flex flex-column">
+                        <h3>#4.1: Recurrent Neural Networks</h3>
+                        <div class="video-description">
+                            <p>Coming soon...</p>
+                        </div>
+                        <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
+                        <div class="reference-links mt-auto">
+                            <a href="#"><i class="fas fa-download"></i> Recurrent Neural Networks</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="4.2" class="row mb-4 video">
+                    <div class="col-md-4 thumbnail-wrapper">
+                        <a target="_blank" href="#">
+                            <img src="imgs/under_construction.png" alt="Video Thumbnail" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-8 d-flex flex-column">
+                        <h3>#4.2: Character-Level RNN with PyTorch (Lab)</h3>
+                        <div class="video-description">
+                            <p>Coming soon...</p>
+                        </div>
+                        <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
+                        <div class="reference-links mt-auto">
+                            <a href="#"><i class="fas fa-code"></i> Lab Notebook</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="4.3" class="row mb-4 video">
+                    <div class="col-md-4 thumbnail-wrapper">
+                        <a target="_blank" href="#">
+                            <img src="imgs/under_construction.png" alt="Video Thumbnail" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-8 d-flex flex-column">
+                        <h3>#4.3: Encoder/Decoder Architecture and Attention</h3>
+                        <div class="video-description">
+                            <p>Coming soon...</p>
+                        </div>
+                        <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
+                        <div class="reference-links mt-auto">
+                            <a href="#"><i class="fas fa-download"></i> Encoder/Decoder Architecture and Attention</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Sticky Footer -->
+    <footer class="footer bg-dark text-white text-center py-3">
+        &copy; 2023 <a target="_blank" target="_blank" href="https://www.youtube.com/@donatocapitella">Donato
+            Capitella</a>
+    </footer>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="site.js"></script>
+
+</body>
+
+</html>
