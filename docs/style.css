@@ -5,6 +5,10 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+.h3, h3 {
+    font-size: 1.65rem !important;
+}
+
 .content-wrapper {
     flex: 1;
 }
@@ -190,11 +194,11 @@ h2 {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 250px;
+    width: 280px;
     background: #eee;
     border-right: 1px solid #ccc;
     transition: 0.3s;
-    transform: translateX(-230px);
+    transform: translateX(-260px);
     font-size: 0.95em;
 }
 
@@ -283,3 +287,9 @@ h2 {
     outline: none;
     box-shadow: none;
 }
+
+.modal-fullscreen {
+    width: 98% !important;
+    max-width: none !important;
+}
+  

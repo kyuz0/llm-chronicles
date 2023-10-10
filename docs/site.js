@@ -66,5 +66,18 @@ $(document).ready(function () {
             $(this).text('more...');
         }
     });
+
+    $('a[data-toggle="modal"]').click(function(e) {
+        e.preventDefault();
+    });
+
+    $('#pdfModal').on('show.bs.modal', function(event) {
+        var button = $(event.relatedTarget); // Button that triggered the modal
+        var pdfUrl = button.data('pdf-url'); // Extract the PDF URL from the data-pdf-url attribute
+    
+        var modal = $(this);
+        modal.find('#pdfIframe').attr('src', pdfUrl);
+        modal.find('#downloadPdfBtn').attr('href', pdfUrl);
+      });
  
 });
