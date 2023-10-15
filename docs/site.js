@@ -11,25 +11,26 @@ function setScrollNavVisible(isVisible) {
     }
 }
 
+function resize() {
+    if ($(window).width() < 992) {
+        setScrollNavVisible(false)
+    } else {
+        setScrollNavVisible(true)
+    }
+}
+
 $(document).ready(function () {
     $(".scroll-nav-toggle").click(function() {
         $(".scroll-nav").toggleClass("active");
         $("#expand-icon").toggle();
         $("#collapse-icon").toggle();
-    });
+    }); 
 
-    // Check initial screen width
-    if ($(window).width() < 992) {
-        $('#lessonList').addClass('collapse');
-    }
+    resize()
 
     // Listen for window resize
     $(window).resize(function() {
-        if ($(window).width() < 992) {
-            setScrollNavVisible(false)
-        } else {
-            setScrollNavVisible(true)
-        }
+        resize()
     });
 
     $(window).on('scroll', function() {
