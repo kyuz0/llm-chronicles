@@ -257,6 +257,7 @@ h2 {
 
 .scroll-nav-sub-list {
     padding-left: 20px;
+    display: none;
 }
 
 .scroll-nav-sub-list a {
@@ -281,6 +282,10 @@ h2 {
 .scroll-nav.active {
     transform: translateX(0px);
     /* This shows the sidebar when active class is added */
+}
+
+.scroll-nav-sub-list.active {
+    display: block;
 }
 
 .scroll-nav-toggle:focus {

@@ -42,6 +42,9 @@ $(document).ready(function () {
                 var lessonId = $(this).attr('id');
                 $('.scroll-nav-button').removeClass('active');
                 $('.scroll-nav-button[href="#' + lessonId + '"]').addClass('active');
+
+                $('.scroll-nav-sub-list').removeClass('active');
+                $('.scroll-nav-button[href="#' + lessonId + '"]').closest('.scroll-nav-sub-list').addClass('active')
             }
         });
     });
@@ -80,5 +83,18 @@ $(document).ready(function () {
         modal.find('#pdfIframe').attr('src', pdfUrl);
         modal.find('#downloadPdfBtn').attr('href', pdfUrl);
       });
+
+      $('.scroll-nav-button').click(function() {
+        // Get the target anchor ID from the data-target attribute of the clicked button
+        var targetId = $(this).data('target');
+
+        $('.scroll-nav-sub-list').removeClass('active');
+        $(this).next('.scroll-nav-sub-list').addClass('active')
+        
+        // Scroll to the target anchor
+        $('html, body').animate({
+            scrollTop: $('#' + targetId).offset().top
+        }, 'slow');
+    });
  
 });
