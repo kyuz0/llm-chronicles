@@ -37,10 +37,10 @@ body {
 .hero2 {
     background-color: #00a8db;
     font-size: 1.1em;
+    padding: 5em;
 }
 
 .hero2 p {
-    margin: 5em;
     max-width: 720px;
 }
 
@@ -49,6 +49,7 @@ body {
     font-size: 30px;
     font-weight: 300;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 5em;
 }
 
 .footer {
