@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Prompt Injection</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reset.min.css"
+		integrity="sha512-Mjxkx+r7O/OLQeKeIBCQ2yspG1P5muhAtv/J+p2/aPnSenciZWm5Wlnt+NOUNA4SHbnBIE/R2ic0ZBiCXdQNUg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.css"
+		integrity="sha512-6OOowvyM6Wl3NXfUTUn/mriLicQy5IoKsrlagy6/YJgd/hYpz4LxVlsV/DBghjcbWwKV4jyheUInWZUjagYVKw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/theme/white.min.css"
+		integrity="sha512-NJYOiL4HPnu7QvvGcvHAnVVz2X6qWcTDAH4x3fmUOW/SGUbK46IbzHhQ1KoKDfK2trs5RwUu03Ax9sxjqz1iQw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style>
+		.video-indicators {
+			display: flex;
+			justify-content: center;
+			margin-top: 10px;
+		}
+
+		.indicator-dot {
+			height: 10px;
+			width: 10px;
+			margin: 0 5px;
+			background-color: #bbb;
+			border-radius: 50%;
+			display: inline-block;
+			cursor: pointer;
+		}
+
+		.indicator-dot.active {
+			background-color: #000;
+		}
+
+		.text-small {
+			font-size: 0.6em;
+		}
+
+		.text-vsmall {
+			font-size: 0.5em;
+		}
+
+		.box {
+			color: #0c5460;
+			background-color: #d1ecf1;
+			border-color: #bee5eb;
+			position: relative;
+			padding: 0.75rem 1.25rem;
+			margin-bottom: 1rem;
+			border: 1px solid transparent;
+			border-radius: 0.25rem;
+		}
+
+		.two-column-layout {
+			display: flex;
+			justify-content: space-around;
+		}
+
+		.card {
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			overflow: hidden;
+			width: 45%;
+			background-color: #acf2ff;
+			/* Adjust the width as needed */
+		}
+
+		.card-title {
+			background-color: #07a5dd;
+			color: white;
+			padding: 10px;
+		}
+
+		.card-content {
+			padding: 15px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Prompt Injection</h1>
+				<h2>An unsolved challenge in LLM applications</h2>
+				<img src="images/logo.png" alt="AI Insiders">
+			</section>
+
+			<section>
+				<h1>whoami</h1>
+				<ul class="text-small">
+					<li>Donato Capitella</li>
+					<li>Software Engineer and Principal Security Consultant at WithSecure (Cyber Security Consultancy)
+					</li>
+					<li>But mostly a tech enthusiast who likes to discover how things work by breaking them apart.</li>
+					<li>Recent YouTube channel on AI: <a href="https://www.youtube.com/@donatocapitella">LLM
+							Chronicles</a></li>
+				</ul>
+			</section>
+
+			<section data-auto-animate>
+				<h3 style="text-align:left;">If building or testing LLM-powered applications,
+					you'll learn:</h3>
+				<ul>
+					<li class="fragment">How attackers leverage prompt injection / jailbreaking</li>
+					<li class="fragment">What's the impact when LLMs are given access to tools/plugins</li>
+					<li class="fragment">Guidelines to secure your LLM applications against injection/jailbreaking</li>
+				</ul>
+			</section>
+
+			<section data-auto-animate>
+				<h2>Threat Landscape</h2>
+				<div class="r-stack">
+					<div class="fragment">
+						<h4>MITRE ATLAS™</h4>
+						<p class="text-small">(Adversarial Threat Landscape for Artificial-Intelligence Systems)</p>
+						<img src="images/mitre-atlas.png">
+					</div>
+					<img class="fragment" src="images/owasp-top-10.webp">
+					<img class="fragment" src="images/owasp-top10-2.png">
+					<img class="fragment" src="images/highlight-1.svg">
+					<img class="fragment" src="images/highlight-2.svg">
+				</div>
+			</section>
+
+			<!-- Slide 3: Terminology -->
+			<section>
+				<h2>Terminology</h2>
+
+				<video id="video1" data-playback-points="0,5,11.6,18" muted>
+					<source src="videos/types.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+				<div class="video-indicators" data-video="video1"></div>
+			</section>
+
+			<!-- Slide 4: Types of Adversarial Prompts -->
+			<section>
+				<h2>Adversarial Prompts</h2>
+				<video id="video2" data-playback-points="0,2.7,6,9.7,13" muted>
+					<source src="videos/prompts.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+				<div class="video-indicators" data-video="video2"></div>
+			</section>
+
+			<section>
+				<h2>Google Docs - Summary</h2>
+				<img src="images/google-docs-injection-1.png">
+			</section>
+
+			<!-- Slide 2: Prompt Injection in Practice -->
+			<section>
+				<video controls muted>
+					<source src="videos/google-docs-injection.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+			</section>
+
+			<section>
+				<img src="images/google-docs-injection-2.png">
+			</section>
+
+			<section data-auto-animate>
+				<h2>Browser Extensions</h2>
+				<div class="r-stack">
+					<video class="fragment" controls muted>
+						<source src="videos/page-summary.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+					<img class="fragment" src="images/youtube-subtitles.svg">
+				</div>
+			</section>
+
+			<!-- Slide 5: LLMs as Agents -->
+			<section data-auto-animate>
+				<h2>Access to Tools / Plugins</h2>
+				<div class="r-stack">
+					<p class="fragment">Prompt Injection can become a very serious issue when LLMs are given access to
+						tools/plugins</p>
+					<div class="fragment" style="width: 100%; background-color: white;">
+						<img height="400px" src="images/react.png">
+					</div>
+				</div>
+				<em class="text-small">*Yao, S. et al. (2022).
+					ReAct: Synergizing Reasoning and Acting in Language Models <a
+						href="https://arxiv.org/abs/2210.03629">https://arxiv.org/abs/2210.03629</a>
+				</em>
+			</section>
+
+			<!-- Slide 6: Case Studies -->
+			<section data-auto-animate>
+				<h2>Case Studies</h2>
+				<p style="text-align:left;">Hands-on examples of Prompt Injection with synthetic Langchain applications.
+				</p>
+				<div class="two-column-layout text-small">
+					<div class="fragment card">
+						<div class="card-title">Bank Agent</div>
+						<div class="card-content">
+							Example of Direct Prompt Injection with a chat agent that helps bank customers with their
+							transactions.
+						</div>
+					</div>
+					<div class="fragment card">
+						<div class="card-title">Email Agent</div>
+						<div class="card-content">
+							Example of Indirect Prompt Injection with a chat agent that helps users with their mailbox.
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Slide 7: Defense Strategies -->
+			<section>
+				<h2>Defense Strategies</h2>
+				<video id="video3"
+					data-playback-points="0,2,4.8,7,10.5,12.5,18.5,20.5,23.5,26.5,31.5,35.5,39.5,43.5,44.5,45.5,51.5,56,58,62.5,64,66.5,69.5,72,74,76.5,78.5"
+					muted>
+					<source src="videos/defence.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+				<div class="video-indicators" data-video="video3"></div>
+			</section>
+
+			<section>
+				<h3>References</h3>
+				<ul class="text-vsmall">
+					<li><strong>Artificial Intelligence Threat Landscape</strong>:
+						<ul>
+							<li>
+								<a href="https://atlas.mitre.org/">MITRE ATLAS™ </a>(Adversarial Threat Landscape for
+								Artificial-Intelligence Systems)
+							</li>
+							<li>
+								<a target="_blank"
+									href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">OWASP
+									Top 10 for Large Language Model Applications</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<strong>Attack Techniques</strong>:
+						<ul>
+							<li>Johann Rehberger.
+								<ul>
+									<li><a target="_blank"
+											href="https://embracethered.com/blog/posts/2023/google-docs-ai-scam/">Google
+											Docs AI
+											Features: Vulnerabilities and Risks</a></li>
+									<li>
+										<a target="_blank"
+											href="https://embracethered.com/blog/posts/2023/ekoparty-prompt-injection-talk/">Prompt
+											Injection in the Wild</a>
+									</li>
+								</ul>
+							</li>
+							<li>Kai Greshake at al. (2023)
+								<a target="_blank" href="https://arxiv.org/abs/2302.12173">Not what you've signed up
+									for:
+									Compromising Real-World LLM-Integrated Applications with Indirect Prompt
+									Injection</a>
+							</li>
+
+							<li>Donato Capitella.
+								<a target="_blank"
+									href="https://labs.withsecure.com/publications/llm-agent-prompt-injection">Synthetic
+									Recollections - A Case Study in Prompt Injection for ReAct LLM Agents</a>
+							</li>
+							<li>Zou, A. et al. (2023).
+								<a target="_blank" href="https://arxiv.org/abs/2307.15043">Universal and Transferable
+									Adversarial Attacks on Aligned Language Models</a>
+							</li>
+						</ul>
+					</li>
+					<li><strong></strong>Defence Techniques</strong>:
+						<ul>
+							<li>OWASP.
+								<a target="_blank"
+									href="https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html">Content
+									Security Policy</a>. Defence-in-depth measure to "sandbox" and control what
+								resources and code a web page can load and run
+							</li>
+							<li>Paul Röttger.
+								<a target="_blank" href="https://safetyprompts.com/">http://SafetyPrompts.com</a>:
+								catalogue of
+								open datasets for evaluating and improving LLM safety
+							</li>
+							<li> Jingwei Yi et al. (2023) <a target="_blank"
+									href="https://arxiv.org/abs/2312.14197">Benchmarking and Defending Against Indirect
+									Prompt
+									Injection Attacks on Large Language Models</a>
+							</li>
+						</ul>
+					</li>
+					<li>WithSecure. <a href="https://github.com/WithSecureLabs/damn-vulnerable-llm-agent">Damn
+							Vulnerable LLM Agent (GitHub, sample application to test prompt injection)</a></li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js"
+		integrity="sha512-sw9iNG3nZSCdLzwV7wuxWovgFA+FnYUlMy5AQn9K+C1QxVvG75mWiX8mXUbwmQ9axu1cqeGIF1wUzejP6xRZOQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://denehyg.github.io/reveal.js-menu/plugin/reveal.js-menu/menu.js"></script>
+
+	<script>
+		Reveal.initialize({
+			hash: true,
+			plugins: [RevealMenu]
+		});
+
+		function getPlaybackPoints(video) {
+			return video.getAttribute('data-playback-points').split(',').map(Number);
+		}
+
+		function createIndicators(video) {
+			var playbackPoints = getPlaybackPoints(video);
+			var indicatorsContainer = document.querySelector('.video-indicators[data-video="' + video.id + '"]');
+			indicatorsContainer.innerHTML = ''; // Clear existing indicators if any
+
+			playbackPoints.forEach(function (point, index) {
+				var dot = document.createElement('span');
+				dot.classList.add('indicator-dot');
+				dot.dataset.pointIndex = index;
+				dot.addEventListener('click', function () {
+					jumpToVideoPoint(video, index, playbackPoints);
+				});
+				indicatorsContainer.appendChild(dot);
+			});
+		}
+
+		function updateIndicators(video, currentPoint) {
+			var indicators = document.querySelectorAll('.video-indicators[data-video="' + video.id + '"] .indicator-dot');
+			indicators.forEach(function (dot, index) {
+				dot.classList.toggle('active', index == currentPoint);
+			});
+		}
+
+		function jumpToVideoPoint(video, pointIndex, playbackPoints) {
+			video.currentTime = playbackPoints[pointIndex];
+			video.dataset.currentPoint = pointIndex + 1;
+			updateIndicators(video, pointIndex);
+
+			var playVideo = setTimeout(function () {
+				video.play();
+				var checkTimeUpdate = function () {
+					if (video.currentTime >= playbackPoints[video.dataset.currentPoint]) {
+						video.pause();
+						video.removeEventListener('timeupdate', checkTimeUpdate);
+						clearTimeout(playVideo);
+					}
+				};
+				video.addEventListener('timeupdate', checkTimeUpdate);
+			}, 300);
+		}
+
+		function handleVideoPlayback(event, video, playbackPoints) {
+			var currentPoint = video.dataset.currentPoint || 0;
+
+			if ((event.keyCode === 39 || event.keyCode === 32) && currentPoint < playbackPoints.length) { // Right arrow or Spacebar
+				video.currentTime = playbackPoints[currentPoint];
+				video.dataset.currentPoint = parseInt(currentPoint) + 1;
+				updateIndicators(video, currentPoint);
+
+				var playVideo = setTimeout(function () {
+					video.play();
+					var checkTimeUpdate = function () {
+						if (video.currentTime >= playbackPoints[video.dataset.currentPoint]) {
+							video.pause();
+							video.removeEventListener('timeupdate', checkTimeUpdate);
+							clearTimeout(playVideo);
+						}
+					};
+					video.addEventListener('timeupdate', checkTimeUpdate);
+				}, 300);
+
+				// Adding an 'ended' event listener to handle when the video finishes playing
+				video.addEventListener('ended', function () {
+					Reveal.configure({ keyboard: true });
+					document.removeEventListener('keydown', handleVideoPlayback);
+					// Logic to handle the end of the video, like moving to the next slide
+				});
+
+				event.preventDefault();
+			}
+		}
+
+		Reveal.addEventListener('slidechanged', function (event) {
+			var video = event.currentSlide.querySelector('video[data-playback-points]');
+			if (video) {
+				var playbackPoints = getPlaybackPoints(video);
+				createIndicators(video);
+				updateIndicators(video, 0);
+
+				video.dataset.currentPoint = 0; // Reset or initialize the current point
+				video.currentTime = 0;
+				Reveal.configure({ keyboard: false });
+				document.addEventListener('keydown', function (event) {
+					handleVideoPlayback(event, video, playbackPoints);
+				});
+			} else {
+				Reveal.configure({ keyboard: true });
+			}
+		});
+	</script>
+
+
+</body>
+
+</html>
