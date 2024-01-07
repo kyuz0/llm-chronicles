@@ -79,6 +79,24 @@
 		.card-content {
 			padding: 15px;
 		}
+
+		.strike {
+			position: relative;
+			display: inline-block;
+		}
+
+		.strike::after {
+			content: '';
+			position: absolute;
+			left: 23px;
+			top: 60px;
+			width: 100%;
+			height: 10%;
+			background: red;
+			opacity: 0.7;
+			transform: rotate(-45deg);
+			transform-origin: bottom left;
+		}
 	</style>
 </head>
 
@@ -219,12 +237,22 @@
 			<section>
 				<h2>Defense Strategies</h2>
 				<video id="video3"
-					data-playback-points="0,2,4.8,7,10.5,12.5,18.5,20.5,23.5,26.5,31.5,35.5,39.5,43.5,44.5,45.5,51.5,56,58,62.5,64,66.5,69.5,72,74,76.5,78.5"
+					data-playback-points="0,2,4.8,7.5,10.6,12.5,19,21,24,27,32,35.7,39.7,43.7,44.7,45.7,51.7,56,58,62.7,64.3,66.7,69.7,72.5,74.5,77,79,80.5,85.5,87.5"
 					muted>
 					<source src="videos/defence.mp4" type="video/mp4">
 					Your browser does not support the video tag.
 				</video>
 				<div class="video-indicators" data-video="video3"></div>
+			</section>
+
+			<section data-auto-animate>
+				<h1>Prompt Injection</h1>
+				<h2>
+					<div class="unsolved">
+						<span class="strike">UN</span>SOLVED CHALLENGE?
+					</div>
+				</h2>
+				<img class="fragment" src="images/new_defence.png">
 			</section>
 
 			<section>
