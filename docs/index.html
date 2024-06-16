@@ -180,7 +180,7 @@
 
                         <li>
                             <button class="base scroll-nav-button" data-target="part5"><span>Part 5: Large Language
-                                    Models and Real-World Applications</span></button>
+                                    Models (LLMs)</span></button>
                             <ul class="scroll-nav-sub-list">
                                 <li class="complete">
                                     <a href="#5.1" class="base scroll-nav-button"><span>#5.1: Transformers and
@@ -206,16 +206,41 @@
                                         </span></a>
                                 </li>
                                 <li>
-                                    <a href="#5.6" class="base scroll-nav-button"><span>#5.6: Retrieval Augmented
+                                    <a href="#5.6" class="base scroll-nav-button"><span>#5.6: LLM Limitations and
+                                            Challenges</span></a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <button class="base scroll-nav-button" data-target="part5"><span>Part 6: LLM
+                                    Applications and Advancements</span></button>
+                            <ul class="scroll-nav-sub-list">
+                                <li>
+                                    <a href="#6.1" class="base scroll-nav-button"><span>#6.1: Retrieval Augmented
                                             Generation - RAG (Part 1)</span></a>
                                 </li>
                                 <li>
-                                    <a href="#5.7" class="base scroll-nav-button"><span>#5.7: Retrieval Augmented
+                                    <a href="#6.2" class="base scroll-nav-button"><span>#6.2: Retrieval Augmented
                                             Generation - RAG (Part 2)</span></a>
                                 </li>
                                 <li>
-                                    <a href="#5.8" class="base scroll-nav-button"><span>#5.8: LLM Limitations and Challenges</span></a>
+                                    <a href="#6.3" class="base scroll-nav-button"><span>#6.3: Multi-Modal LLMs for
+                                            Image, Sound and Video</span></a>
                                 </li>
+                                <li>
+                                    <a href="#6.4" class="base scroll-nav-button"><span>#6.4: LLM Agents with ReAct
+                                            (Reason + Act)</span></a>
+                                </li>
+                                <li>
+                                    <a href="#6.5" class="base scroll-nav-button"><span>#6.5: Quantization and
+                                            Distillation</span></a>
+                                </li>
+                                <li>
+                                    <a href="#6.6" class="base scroll-nav-button"><span>#6.6: Transformer Architecture
+                                            Improvements (MoE, Flash Attention)</span></a>
+                                </li>
+
                             </ul>
                         </li>
 
@@ -818,14 +843,14 @@
                     </div>
                 </div>
 
-                <div id="5.8" class="row mb-4 video">
+                <div id="5.6" class="row mb-4 video">
                     <div class="col-md-4 thumbnail-wrapper">
                         <a target="_blank" href="https://youtu.be/jXtjD5bkEGc">
                             <img src="imgs/thumb5_8.png" alt="Video Thumbnail" class="img-fluid">
                         </a>
                     </div>
                     <div class="col-md-8 d-flex flex-column">
-                        <h3>#5.8: LLM Limitations and Challenges</h3>
+                        <h3>#5.6: LLM Limitations and Challenges</h3>
                         <div class="video-description">
                             <p>In this episode we'll cover the main limitations and challenges with current Large
                                 Language Models (LLM). This helps cut through the hype and get a clear picture of what
@@ -836,6 +861,134 @@
                             <a href="#" data-toggle="modal" data-target="#pdfModal"
                                 data-pdf-url="pdfs/llm-chronicles-5.8_llm_limitations.pdf"><i
                                     class="fas fa-file-pdf"></i> LLM Limitations and Challenges</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <h2 id="part5">Part 6: LLM Applications and Advancements</h2>
+            <div class="video-section">
+                <div id="6.1" class="row mb-4 video">
+                    <div class="col-md-4 thumbnail-wrapper">
+                        <a target="_blank" href="https://youtu.be/7yXVhDz3OD8">
+                            <img src="imgs/thumb5_3.png" alt="Video Thumbnail" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-8 d-flex flex-column">
+                        <h3>#6.1: Retrieval Augmented Generation - RAG (Part 1)</h3>
+                        <div class="video-description">
+                            <p>This episode introduces RAG (Retrieval Augmented Generation) with LLMs. We cover all the
+                                basic concepts, including semantic search with vector databases. We finish with a quick
+                                lab showing how to create a basic RAG system for the Huberman Lab Podcast with
+                                Langchain, GPT-3.5, BGE embeddings and ChromaDB.</p>
+                        </div>
+                        <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
+                        <div class="reference-links mt-auto">
+                            <a href="#" data-toggle="modal" data-target="#pdfModal"
+                                data-pdf-url="pdfs/llm-chronicles-5.3_retrieval_augmented_generation-part-1.pdf"><i
+                                    class="fas fa-file-pdf"></i> Retrieval Augmented Generation - Part 1</a>
+                            <a
+                                href="https://colab.research.google.com/drive/1lyIskhL46RRQbpxGhi-ovnZmnPOx7Dw6?usp=sharing"><i
+                                    class="fas fa-code"></i> Lab Notebook</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="6.2" class="row mb-4 video">
+                    <div class="col-md-4 thumbnail-wrapper">
+                        <a target="_blank" href="https://www.youtube.com/watch?v=dCEMod64dko">
+                            <img src="imgs/thumb5_4.png" alt="Video Thumbnail" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-8 d-flex flex-column">
+                        <h3>#6.2: Retrieval Augmented Generation - RAG (Part 2)</h3>
+                        <div class="video-description">
+                            <p>This episode explores some issues with RAG, covering solutions and common strategies to
+                                mitigate them and improve performance such as self-query, parent document retrieval and
+                                HyDE (Hypothetical Document Embedding).</p>
+                        </div>
+                        <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
+                        <div class="reference-links mt-auto">
+                            <a href="#" data-toggle="modal" data-target="#pdfModal"
+                                data-pdf-url="pdfs/llm-chronicles-5.4_retrieval_augmented_generation-full.pdf"><i
+                                    class="fas fa-file-pdf"></i> Retrieval Augmented Generation - Part 1</a>
+                            <a
+                                href="https://colab.research.google.com/drive/10yjlRUpJGWzOWE75lY81lkKiaDXcvenA?usp=sharing"><i
+                                    class="fas fa-code"></i> Notebook (Self-Query)</a>
+                            <a
+                                href="https://colab.research.google.com/drive/1OEauDfrYKU9CLSCQwdnGX21bjznAl5hv?usp=sharing"><i
+                                    class="fas fa-code"></i> Notebook (Parent-Document)</a>
+                            <a
+                                href="https://colab.research.google.com/drive/1l88f2d0-krKlOmWCOdEafTX7dPPGfZrs?usp=sharing"><i
+                                    class="fas fa-code"></i> Notebook (HyDE)</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="6.3" class="row mb-4 video">
+                    <div class="col-md-4 thumbnail-wrapper">
+                        <a target="_blank" href="#">
+                            <img src="imgs/under_construction.png" alt="Video Thumbnail" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-8 d-flex flex-column">
+                        <h3>#6.3: Multi-Modal LLMs for Image, Sound and Video</h3>
+                        <div class="video-description">
+                            <p>Coming soon(ish!)</p>
+                        </div>
+                        <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
+                        <div class="reference-links mt-auto">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="6.4" class="row mb-4 video">
+                    <div class="col-md-4 thumbnail-wrapper">
+                        <a target="_blank" href="#">
+                            <img src="imgs/under_construction.png" alt="Video Thumbnail" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-8 d-flex flex-column">
+                        <h3>#6.4: LLM Agents with ReAct (Reason + Act)</h3>
+                        <div class="video-description">
+                            <p>Coming soon(ish!)</p>
+                        </div>
+                        <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
+                        <div class="reference-links mt-auto">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="6.5" class="row mb-4 video">
+                    <div class="col-md-4 thumbnail-wrapper">
+                        <a target="_blank" href="#">
+                            <img src="imgs/under_construction.png" alt="Video Thumbnail" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-8 d-flex flex-column">
+                        <h3>#6.5: Quantization and Distillation</h3>
+                        <div class="video-description">
+                            <p>Coming soon(ish!)</p>
+                        </div>
+                        <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
+                        <div class="reference-links mt-auto">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="6.6" class="row mb-4 video">
+                    <div class="col-md-4 thumbnail-wrapper">
+                        <a target="_blank" href="#">
+                            <img src="imgs/under_construction.png" alt="Video Thumbnail" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-8 d-flex flex-column">
+                        <h3>#6.6: Transformer Architecture Improvements (MoE, Flash Attention)</h3>
+                        <div class="video-description">
+                            <p>Coming soon(ish!)</p>
+                        </div>
+                        <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
+                        <div class="reference-links mt-auto">
+
                         </div>
                     </div>
                 </div>
