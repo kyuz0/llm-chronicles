@@ -11,6 +11,7 @@ body {
 
 .content-wrapper {
     flex: 1;
+    margin-left: 10px;
 }
 
 .container-md {
@@ -19,7 +20,7 @@ body {
 
 /* Logo Size */
 .hero img {
-    max-width: 370px;
+    max-width: 250px;
     /* Adjust this value as needed */
     width: 100%;
 }
@@ -27,15 +28,15 @@ body {
 /* Hero Background */
 .hero {
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    height: 30vh;
+    background-size: cover !important;
+    background-position: bottom !important;
+    height: 25vh;
     /* Adjust this value between 25vh to 30vh based on your preference */
-    background: url('imgs/hero2.svg');
+    background: url('imgs/banner-with-tagline.png');
 }
 
 .hero2 {
-    background-color: #00a8db;
+    background-color: #229bbdff;
     font-size: 1.1em;
     padding: 5em;
 }
