@@ -233,11 +233,19 @@
                                             (Reason + Act)</span></a>
                                 </li>
                                 <li>
-                                    <a href="#6.5" class="base scroll-nav-button"><span>#6.5: Quantization and
+                                    <a href="#6.5" class="base scroll-nav-button"><span>#6.5: Build LLM Agents from
+                                            Scratch: PAL, ReAct & Langchain in 1 Hour</span></a>
+                                </li>
+                                <li>
+                                    <a href="#6.6" class="base scroll-nav-button"><span>#6.6: Hallacunation Detection
+                                            and Evaluation of RAG systems (RAGAS)</span></a>
+                                </li>
+                                <li>
+                                    <a href="#6.7" class="base scroll-nav-button"><span>#6.7: Quantization and
                                             Distillation</span></a>
                                 </li>
                                 <li>
-                                    <a href="#6.6" class="base scroll-nav-button"><span>#6.6: Transformer Architecture
+                                    <a href="#6.8" class="base scroll-nav-button"><span>#6.8: Transformer Architecture
                                             Improvements (MoE, Flash Attention)</span></a>
                                 </li>
 
@@ -580,7 +588,7 @@
                         <div class="video-description">
                             <p>In this episode we explore the seminal work on Language Translation with Recurrent Neural
                                 Networks(RNNs) that sparked key innovations that power advanced language models like
-                                OpenAI’s ChatGPT and Google’s Gemini. Specifically, we'll look at how the
+                                OpenAI's ChatGPT and Google's Gemini. Specifically, we'll look at how the
                                 encoder/decoder architecture can be used to solve the problem of alignment for seq2seq
                                 tasks such as language translation, as described by Ilya Sutskever at al. in a 2014
                                 paper titled “Sequence to Sequence Learning with Neural Networks”.
@@ -628,7 +636,7 @@
                     <div class="col-md-8 d-flex flex-column">
                         <h3>#4.7: Attention Mechanism for Seq2Seq RNNs</h3>
                         <div class="video-description">
-                            <p>In this episode we’ll cover the so-called "attention mechanism" for seq2seq tasks with
+                            <p>In this episode we'll cover the so-called "attention mechanism" for seq2seq tasks with
                                 Neural Networks. This was first introduced by Bahdanau at al. in 2014 to improve the
                                 performance of encoder/decoder RNNs used for language translation and proved fundamental
                                 to create the Transformer architecture that powers modern LLMs.</p>
@@ -877,10 +885,10 @@
                         <h3>#6.3: Multi-Modal LLMs for Image, Sound and Video</h3>
                         <div class="video-description">
                             <p>In this episode we look at the architecture of a multi-modal LLM, discussing the general
-                                training process of an MLLM. After that, we’ll focus on vision and explore Vision
+                                training process of an MLLM. After that, we'll focus on vision and explore Vision
                                 Transformers and how they are trained with contrastive learning. Vision Transformers are
-                                the most commonly used building block in MLLMs with vision capabilities. Finally, we’ll
-                                get hands-on and look into Google’s open-weight PaliGemma, analysing its implementation
+                                the most commonly used building block in MLLMs with vision capabilities. Finally, we'll
+                                get hands-on and look into Google's open-weight PaliGemma, analysing its implementation
                                 to see these concepts in action within a real-world multi-modal LLM.</p>
                         </div>
                         <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
@@ -903,8 +911,8 @@
                     <div class="col-md-8 d-flex flex-column">
                         <h3>#6.4: LLM Agents with ReAct (Reason + Act)</h3>
                         <div class="video-description">
-                            <p>In this episode we’ll cover LLM agents, focusing on the core research (that helped to
-                                improve LLMs’ reasoning while allowing them to interaction with the external world via
+                            <p>In this episode we'll cover LLM agents, focusing on the core research (that helped to
+                                improve LLMs' reasoning while allowing them to interaction with the external world via
                                 the use of tools. This includes Chain of Thought prompting, PAL (Program-aieded Language
                                 Models) and ReAct (Reason + Act) as used in Langchain and CrewAI agents.
                             </p>
@@ -912,25 +920,37 @@
                         <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
                         <div class="reference-links mt-auto">
                             <a href="#" data-toggle="modal" data-target="#pdfModal"
-                            data-pdf-url="pdfs/llm-chronicles-6.4-llm-agents_chain-of-thought_react.pdf"><i
-                                class="fas fa-file-pdf"></i> LLM Agents (Chain ot Thought / ReAct) Canvas</a>
+                                data-pdf-url="pdfs/llm-chronicles-6.4-llm-agents_chain-of-thought_react.pdf"><i
+                                    class="fas fa-file-pdf"></i> LLM Agents (Chain ot Thought / ReAct) Canvas</a>
                         </div>
                     </div>
                 </div>
                 <div id="6.5" class="row mb-4 video">
                     <div class="col-md-4 thumbnail-wrapper">
-                        <a target="_blank" href="#">
-                            <img src="imgs/under_construction.png" alt="Video Thumbnail" class="img-fluid">
+                        <a target="_blank" href="https://youtu.be/FRnwbww4MtE">
+                            <img src="imgs/thumb_6.5.png" alt="Video Thumbnail" class="img-fluid">
                         </a>
                     </div>
                     <div class="col-md-8 d-flex flex-column">
-                        <h3>#6.5: Quantization and Distillation</h3>
+                        <h3>#6.5: Build LLM Agents from Scratch: PAL, ReAct & Langchain in 1 Hour</h3>
                         <div class="video-description">
-                            <p>Coming soon(ish!)</p>
+                            <p>In this video, I'll guide you through building LLM agents from scratch, starting with
+                                paradigms like PAL (Program-Aided Language models) and ReAct (Reason + Act) to enhance
+                                reasoning and agent behavior. First, you'll learn how to implement these manually. Then,
+                                I'll show you how to achieve the same using the Langchain framework, including LangChain
+                                Expression Language (LCEL).
+
+                                After that, I'll walk you through how to switch between different language models like
+                                GPT-4, Llama 3.1, and Mixtral on platforms like TogetherAI and Groq, giving you
+                                flexibility in agent design. Finally, I'll demonstrate how to use OpenAI's function
+                                calling as an alternative to a direct ReAct prompt, adding another layer of
+                                functionality to your agents.</p>
                         </div>
                         <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
                         <div class="reference-links mt-auto">
-
+                            <a
+                                href="https://colab.research.google.com/drive/1mQfn4XU0Ps9nllVfMMSNor1y4XQhvleX?usp=sharing"><i
+                                    class="fas fa-code"></i> Lab Notebook</a>
                         </div>
                     </div>
                 </div>
@@ -941,7 +961,41 @@
                         </a>
                     </div>
                     <div class="col-md-8 d-flex flex-column">
-                        <h3>#6.6: Transformer Architecture Improvements (MoE, Flash Attention)</h3>
+                        <h3>#6.6: Hallacunation Detection and Evaluation of RAG systems (RAGAS)</h3>
+                        <div class="video-description">
+                            <p>Coming soon(ish!)</p>
+                        </div>
+                        <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
+                        <div class="reference-links mt-auto">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="6.7" class="row mb-4 video">
+                    <div class="col-md-4 thumbnail-wrapper">
+                        <a target="_blank" href="#">
+                            <img src="imgs/under_construction.png" alt="Video Thumbnail" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-8 d-flex flex-column">
+                        <h3>#6.7: Quantization and Distillation</h3>
+                        <div class="video-description">
+                            <p>Coming soon(ish!)</p>
+                        </div>
+                        <a target="_blank" href="#" class="show-more" style="display: none;">more...</a>
+                        <div class="reference-links mt-auto">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="6.8" class="row mb-4 video">
+                    <div class="col-md-4 thumbnail-wrapper">
+                        <a target="_blank" href="#">
+                            <img src="imgs/under_construction.png" alt="Video Thumbnail" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-8 d-flex flex-column">
+                        <h3>#6.8: Transformer Architecture Improvements (MoE, Flash Attention)</h3>
                         <div class="video-description">
                             <p>Coming soon(ish!)</p>
                         </div>
